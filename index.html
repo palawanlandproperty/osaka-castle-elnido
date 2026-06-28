@@ -52,13 +52,15 @@ body[data-lang="ja"] [lang="en"]{display:none}
 .topbar{
   position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;align-items:center;justify-content:space-between;
-  padding:14px clamp(18px,5vw,56px);
+  padding:8px clamp(18px,5vw,56px);
   background:rgba(245,239,227,.82);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--rule);
   transition:padding .3s;
 }
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand-logo{height:60px;width:auto;display:block}
+@media(max-width:760px){.brand-logo{height:48px}}
 .brand .mon{
   width:38px;height:38px;flex:none;border-radius:50%;
   background:var(--vermilion);
@@ -222,12 +224,8 @@ svg{display:block}
 
 <!-- ====== TOP BAR ====== -->
 <header class="topbar">
-  <a href="#top" class="brand">
-    <span class="mon jp">城</span>
-    <span>
-      <b>Osaka Castle</b>
-      <span>El Nido · Palawan</span>
-    </span>
+  <a href="#top" class="brand" aria-label="Osaka Castle El Nido">
+    <img class="brand-logo" src="logo.png" alt="Osaka Castle El Nido">
   </a>
   <nav class="nav">
     <div class="nav-links">

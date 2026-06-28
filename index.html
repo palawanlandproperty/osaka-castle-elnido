@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osaka Castle — Japanese Restaurant in El Nido, Palawan</title>
+<meta name="description" content="Authentic Japanese cuisine in the heart of El Nido, Palawan. Sushi, ramen, teppanyaki and more. エルニドの本格和食レストラン。">
+
+<!-- Open Graph for Facebook / Google sharing -->
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Osaka Castle — Japanese Restaurant in El Nido">
+<meta property="og:description" content="Authentic Japanese cuisine in the heart of El Nido, Palawan.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1a1410;
+  --sumi:#2b211a;
+  --washi:#f5efe3;
+  --washi-deep:#ece2cf;
+  --vermilion:#c0392b;
+  --vermilion-deep:#9c2a1f;
+  --gold:#b08d3e;
+  --gold-light:#cba85a;
+  --rule:rgba(26,20,16,.14);
+  --shadow:0 18px 50px -22px rgba(26,20,16,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Zen Kaku Gothic New",sans-serif;
+  background:var(--washi);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.jp{font-family:"Shippori Mincho",serif;}
+h1,h2,h3{font-family:"Shippori Mincho",serif;font-weight:700;line-height:1.25;}
+
+/* lang toggle visibility */
+body[data-lang="en"] [lang="ja"]{display:none}
+body[data-lang="ja"] [lang="en"]{display:none}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(18px,5vw,56px);
+  background:rgba(245,239,227,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+  transition:padding .3s;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand .mon{
+  width:38px;height:38px;flex:none;border-radius:50%;
+  background:var(--vermilion);
+  display:grid;place-items:center;color:#fff;
+  font-family:"Shippori Mincho",serif;font-weight:800;font-size:18px;
+  box-shadow:0 4px 14px -4px rgba(192,57,43,.6);
+}
+.brand b{font-family:"Shippori Mincho",serif;font-size:18px;letter-spacing:.04em}
+.brand span{display:block;font-size:11px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{color:var(--sumi);text-decoration:none;font-size:14px;font-weight:500;position:relative}
+.nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--vermilion);transition:width .25s}
+.nav a:hover::after{width:100%}
+.langbtn{
+  border:1px solid var(--gold);background:none;color:var(--gold);
+  border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.1em;
+  cursor:pointer;font-family:inherit;font-weight:700;transition:.2s;
+}
+.langbtn:hover{background:var(--gold);color:#fff}
+.nav-links{display:flex;gap:26px}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:grid;place-items:center;
+  text-align:center;padding:120px 22px 80px;
+  background:
+    linear-gradient(rgba(26,20,16,.55),rgba(26,20,16,.7)),
+    url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=1600') center/cover;
+  color:#fff;
+}
+.hero-inner{max-width:760px;position:relative;z-index:2}
+.hero .eyebrow{
+  font-size:13px;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:26px;
+}
+.hero h1{font-size:clamp(40px,8vw,84px);color:#fff;letter-spacing:.02em;margin-bottom:8px;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.hero .kanji{font-size:clamp(46px,9vw,96px);color:var(--vermilion);display:inline-block;
+  -webkit-text-stroke:1px rgba(255,255,255,.3);}
+.hero p{font-size:clamp(15px,2.2vw,19px);margin:20px auto 36px;max-width:540px;opacity:.92}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  padding:14px 30px;border-radius:999px;font-weight:700;font-size:15px;
+  letter-spacing:.03em;transition:transform .2s,box-shadow .2s;cursor:pointer;
+  font-family:inherit;border:none;
+}
+.btn-primary{background:var(--vermilion);color:#fff;box-shadow:0 10px 30px -8px rgba(192,57,43,.7)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(192,57,43,.8)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:12px;letter-spacing:.3em;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ---------- section frame ---------- */
+section{padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px)}
+.sec-head{text-align:center;max-width:640px;margin:0 auto clamp(40px,6vw,64px)}
+.sec-head .label{
+  font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--vermilion);
+  display:block;margin-bottom:14px;
+}
+.sec-head h2{font-size:clamp(28px,4.4vw,44px);margin-bottom:14px}
+.sec-head p{color:var(--sumi);opacity:.78;font-size:15.5px}
+.divider{width:54px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:3px}
+
+/* ---------- about ---------- */
+.about{background:var(--washi-deep)}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center;max-width:1100px;margin:0 auto}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.about-img{border-radius:8px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:18px}
+.about-text p{margin-bottom:16px;color:var(--sumi)}
+.about-text .label{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--vermilion);display:block;margin-bottom:14px}
+
+/* ---------- menu ---------- */
+.menu-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:42px}
+.menu-tab{
+  border:1px solid var(--rule);background:none;color:var(--sumi);
+  padding:9px 20px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:500;
+  cursor:pointer;transition:.2s;
+}
+.menu-tab.active{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.dish{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(26,20,16,.5);transition:transform .25s,box-shadow .25s}
+.dish:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.dish-img{aspect-ratio:16/10;overflow:hidden;position:relative}
+.dish-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.dish:hover .dish-img img{transform:scale(1.06)}
+.dish-tag{position:absolute;top:10px;left:10px;background:var(--vermilion);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;font-weight:700}
+.dish-body{padding:18px 20px}
+.dish-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.dish-head h3{font-size:18px}
+.dish-price{font-family:"Shippori Mincho",serif;font-weight:700;color:var(--vermilion);font-size:16px;white-space:nowrap}
+.dish-body p{font-size:13.5px;color:var(--sumi);opacity:.75;line-height:1.55}
+.menu-note{text-align:center;margin-top:34px;font-size:13px;color:var(--sumi);opacity:.6}
+
+/* ---------- gallery ---------- */
+.gallery{background:var(--sumi);color:var(--washi)}
+.gallery .sec-head h2,.gallery .sec-head p{color:var(--washi)}
+.gallery .sec-head p{opacity:.7}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1100px;margin:0 auto;grid-auto-rows:180px}
+.gallery-grid figure{overflow:hidden;border-radius:8px}
+.gallery-grid figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery-grid figure:nth-child(6){grid-column:span 2}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:saturate(1.02)}
+.gallery-grid figure:hover img{transform:scale(1.08)}
+@media(max-width:760px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}.gallery-grid figure:nth-child(1){grid-column:span 2}.gallery-grid figure:nth-child(6){grid-column:span 1}}
+
+/* ---------- info / hours / map ---------- */
+.info{background:var(--washi-deep)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);max-width:1100px;margin:0 auto;align-items:stretch}
+@media(max-width:820px){.info-grid{grid-template-columns:1fr}}
+.info-card{background:#fff;border-radius:12px;padding:clamp(26px,4vw,40px);box-shadow:0 12px 36px -24px rgba(26,20,16,.6)}
+.info-card h3{font-size:22px;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.info-card h3::before{content:"";width:8px;height:22px;background:var(--vermilion);border-radius:2px;display:inline-block}
+.hours-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--rule);font-size:15px}
+.hours-row:last-child{border-bottom:none}
+.hours-row .day{color:var(--sumi)}
+.hours-row .time{font-weight:700}
+.hours-row.closed .time{color:var(--vermilion)}
+.contact-line{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.contact-line:last-child{border-bottom:none}
+.contact-line .ic{width:34px;height:34px;flex:none;border-radius:50%;background:var(--washi);display:grid;place-items:center;color:var(--vermilion)}
+.contact-line a{color:var(--ink);text-decoration:none;font-weight:500}
+.contact-line a:hover{color:var(--vermilion)}
+.map-wrap{grid-column:1/-1;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:21/8;min-height:300px}
+@media(max-width:820px){.map-wrap{aspect-ratio:4/3}}
+.map-wrap iframe{width:100%;height:100%;border:0}
+
+/* ---------- reserve ---------- */
+.reserve{
+  background:
+    linear-gradient(rgba(156,42,31,.92),rgba(156,42,31,.95)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400') center/cover fixed;
+  color:#fff;text-align:center;
+}
+.reserve h2{font-size:clamp(28px,5vw,46px);color:#fff;margin-bottom:16px}
+.reserve p{max-width:520px;margin:0 auto 30px;opacity:.92}
+.reserve .btn-primary{background:#fff;color:var(--vermilion-deep)}
+.reserve .btn-primary:hover{background:var(--washi)}
+.reserve .btn-ghost{border-color:rgba(255,255,255,.6)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--washi);padding:56px clamp(20px,6vw,80px) 30px;text-align:center}
+.foot-brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
+.foot-brand .mon{width:42px;height:42px;border-radius:50%;background:var(--vermilion);display:grid;place-items:center;font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px}
+.foot-brand b{font-family:"Shippori Mincho",serif;font-size:22px}
+.socials{display:flex;gap:16px;justify-content:center;margin:24px 0}
+.socials a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,239,227,.25);display:grid;place-items:center;color:var(--washi);transition:.2s}
+.socials a:hover{background:var(--vermilion);border-color:var(--vermilion);transform:translateY(-3px)}
+.foot-copy{font-size:12.5px;opacity:.5;margin-top:18px;letter-spacing:.04em}
+svg{display:block}
+</style>
+</head>
+<body data-lang="en">
+
+<!-- ====== TOP BAR ====== -->
+<header class="topbar">
+  <a href="#top" class="brand">
+    <span class="mon jp">城</span>
+    <span>
+      <b>Osaka Castle</b>
+      <span>El Nido · Palawan</span>
+    </span>
+  </a>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="#about"><span lang="en">About</span><span lang="ja">店について</span></a>
+      <a href="#menu"><span lang="en">Menu</span><span lang="ja">メニュー</span></a>
+      <a href="#gallery"><span lang="en">Gallery</span><span lang="ja">ギャラリー</span></a>
+      <a href="#info"><span lang="en">Visit</span><span lang="ja">アクセス</span></a>
+    </div>
+    <button class="langbtn" id="langToggle">日本語</button>
+  </nav>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow"><span lang="en">Authentic Japanese Cuisine</span><span lang="ja">本格和食</span></div>
+    <h1>Osaka Castle</h1>
+    <div class="kanji jp">大阪城</div>
+    <p>
+      <span lang="en">A taste of Japan in the heart of El Nido. Fresh sushi, sizzling teppanyaki, and warm hospitality — just steps from the bay.</span>
+      <span lang="ja">エルニドの中心で味わう、本物の日本の味。新鮮な寿司、鉄板焼き、そして心からのおもてなしを。海辺のすぐそばで。</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-primary"><span lang="en">View Menu</span><span lang="ja">メニューを見る</span></a>
+      <a href="#info" class="btn btn-ghost"><span lang="en">Reserve a Table</span><span lang="ja">予約・お問い合わせ</span></a>
+    </div>
+  </div>
+  <div class="scrollcue"><span lang="en">SCROLL</span><span lang="ja">スクロール</span></div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=900" alt="Japanese dining at Osaka Castle">
+    </div>
+    <div class="about-text">
+      <span class="label"><span lang="en">Our Story</span><span lang="ja">私たちについて</span></span>
+      <h2><span lang="en">Japan, on the shores of Palawan</span><span lang="ja">パラワンの海辺に、日本の食卓を</span></h2>
+      <p>
+        <span lang="en">Osaka Castle brings the flavours of Japan to El Nido. Our chefs prepare each dish with imported ingredients and local-fresh seafood, served in a setting that blends traditional Japanese warmth with island calm.</span>
+        <span lang="ja">大阪城は、日本の味をエルニドにお届けします。輸入食材と地元で獲れた新鮮な魚介を使い、一品一品丁寧に仕上げています。日本の温もりと島ののどかさが溶け合う空間で、心ゆくまでお楽しみください。</span>
+      </p>
+      <p>
+        <span lang="en">Whether you're craving a hand-rolled sushi set after a day of island hopping or a hearty bowl of ramen, you'll find a piece of home — and a new favourite — at our table.</span>
+        <span lang="ja">アイランドホッピングの後の握り寿司も、心温まる一杯のラーメンも。ここには、懐かしさと新しいお気に入りの両方があります。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MENU ====== -->
+<section id="menu">
+  <div class="sec-head">
+    <span class="label"><span lang="en">Our Menu</span><span lang="ja">お品書き</span></span>
+    <h2><span lang="en">Signature Dishes</span><span lang="ja">おすすめ料理</span></h2>
+    <p><span lang="en">A selection of our most-loved plates. Prices in Philippine Peso.</span><span lang="ja">人気の料理を厳選してご紹介します。価格はフィリピンペソ表示です。</span></p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="menu-tabs" id="menuTabs">
+    <button class="menu-tab active" data-cat="sushi"><span lang="en">Sushi & Sashimi</span><span lang="ja">寿司・刺身</span></button>
+    <button class="menu-tab" data-cat="hot"><span lang="en">Ramen & Hot</span><span lang="ja">ラーメン・温菜</span></button>
+    <button class="menu-tab" data-cat="grill"><span lang="en">Teppanyaki</span><span lang="ja">鉄板焼き</span></button>
+    <button class="menu-tab" data-cat="drink"><span lang="en">Drinks</span><span lang="ja">ドリンク</span></button>
+  </div>
+
+  <div class="menu-grid" id="menuGrid"></div>
+  <p class="menu-note">
+    <span lang="en">※ Menu and prices are samples — replace with your real items. Allergen info available on request.</span>
+    <span lang="ja">※ メニューと価格はサンプルです。実際の内容に差し替えてください。アレルギー情報はスタッフまで。</span>
+  </p>
+</section>
+
+<!-- ====== GALLERY ====== -->
+<section class="gallery" id="gallery">
+  <div class="sec-head">
+    <span class="label"><span lang="en">Gallery</span><span lang="ja">ギャラリー</span></span>
+    <h2><span lang="en">Inside Osaka Castle</span><span lang="ja">店内のようす</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="gallery-grid">
+    <figure><img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=900" alt="Sushi platter"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Donburi bowl"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600" alt="Ramen"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600" alt="Sashimi"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Restaurant interior"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900" alt="Dining table"></figure>
+  </div>
+</section>
+
+<!-- ====== INFO / HOURS / CONTACT / MAP ====== -->
+<section class="info" id="info">
+  <div class="sec-head">
+    <span class="label"><span lang="en">Visit Us</span><span lang="ja">ご来店案内</span></span>
+    <h2><span lang="en">Hours & Location</span><span lang="ja">営業時間・アクセス</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3><span lang="en">Opening Hours</span><span lang="ja">営業時間</span></h3>
+      <div class="hours-row"><span class="day"><span lang="en">Mon – Fri</span><span lang="ja">月〜金</span></span><span class="time">11:00 – 22:00</span></div>
+      <div class="hours-row"><span class="day"><span lang="en">Saturday</span><span lang="ja">土曜</span></span><span class="time">11:00 – 23:00</span></div>
+      <div class="hours-row"><span class="day"><span lang="en">Sunday</span><span lang="ja">日曜</span></span><span class="time">11:00 – 22:00</span></div>
+      <div class="hours-row closed"><span class="day"><span lang="en">Holidays</span><span lang="ja">祝日</span></span><span class="time"><span lang="en">Open</span><span lang="ja">営業</span></span></div>
+    </div>
+    <div class="info-card">
+      <h3><span lang="en">Find Us</span><span lang="ja">お問い合わせ</span></h3>
+      <div class="contact-line">
+        <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span><span lang="en">Serena St, El Nido, Palawan, Philippines</span><span lang="ja">パラワン州エルニド セレナ通り（住所サンプル）</span></span>
+      </div>
+      <div class="contact-line">
+        <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <a href="tel:+639000000000">+63 900 000 0000</a>
+      </div>
+      <div class="contact-line">
+        <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
+        <a href="mailto:info@osakacastle.ph">info@osakacastle.ph</a>
+      </div>
+      <div class="contact-line">
+        <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm-5 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm5.5-9a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg></span>
+        <a href="https://instagram.com/" target="_blank" rel="noopener">@osakacastle.elnido</a>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=El+Nido+Palawan&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Osaka Castle location map"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ====== RESERVE CTA ====== -->
+<section class="reserve">
+  <h2><span lang="en">Book Your Table</span><span lang="ja">ご予約はこちら</span></h2>
+  <p>
+    <span lang="en">Reserve directly by phone or message us on social media. Walk-ins always welcome.</span>
+    <span lang="ja">お電話、またはSNSのメッセージからお気軽にご予約ください。当日のご来店も歓迎です。</span>
+  </p>
+  <div class="hero-actions">
+    <a href="tel:+639000000000" class="btn btn-primary"><span lang="en">Call to Reserve</span><span lang="ja">電話で予約</span></a>
+    <a href="https://facebook.com/" target="_blank" rel="noopener" class="btn btn-ghost"><span lang="en">Message on Facebook</span><span lang="ja">Facebookで連絡</span></a>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="foot-brand">
+    <span class="mon jp">城</span>
+    <b>Osaka Castle</b>
+  </div>
+  <p style="opacity:.7;font-size:14px">
+    <span lang="en">Japanese Restaurant · El Nido, Palawan</span>
+    <span lang="ja">和食レストラン・パラワン州エルニド</span>
+  </p>
+  <div class="socials">
+    <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+    </a>
+    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm-5 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm5.5-9a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>
+    </a>
+    <a href="tel:+639000000000" aria-label="Phone">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    </a>
+  </div>
+  <p class="foot-copy">© 2026 Osaka Castle. All rights reserved.</p>
+</footer>
+
+<script>
+// ---- language toggle ----
+const body=document.body, langBtn=document.getElementById('langToggle');
+langBtn.addEventListener('click',()=>{
+  const en = body.dataset.lang==='en';
+  body.dataset.lang = en?'ja':'en';
+  langBtn.textContent = en?'English':'日本語';
+  document.documentElement.lang = en?'ja':'en';
+});
+
+// ---- menu data (sample — replace with real items) ----
+const MENU={
+  sushi:[
+    {tag:{en:'Popular',ja:'人気'},name:{en:'Castle Sushi Set',ja:'城寿司盛り合わせ'},price:'₱650',desc:{en:'Ten pieces of chef-selected nigiri with miso soup.',ja:'おまかせ握り10貫、味噌汁付き。'},img:'1579871494447-9811cf80d66c'},
+    {name:{en:'Salmon Sashimi',ja:'サーモン刺身'},price:'₱420',desc:{en:'Fresh salmon, thinly sliced, eight pieces.',ja:'新鮮なサーモンの薄造り、8切れ。'},img:'1611143669185-af224c5e3252'},
+    {name:{en:'Tuna & Avocado Roll',ja:'マグロアボカドロール'},price:'₱380',desc:{en:'Maki roll with seared tuna and creamy avocado.',ja:'炙りマグロとアボカドの巻き寿司。'},img:'1583623025817-d180a2221d0a'},
+    {name:{en:'Vegetarian Roll',ja:'野菜巻き'},price:'₱290',desc:{en:'Cucumber, pickled radish and shiso, eight pieces.',ja:'きゅうり、たくあん、大葉の巻き寿司、8個。'},img:'1564489563601-c53cfc451e93'}
+  ],
+  hot:[
+    {tag:{en:'Signature',ja:'看板'},name:{en:'Tonkotsu Ramen',ja:'豚骨ラーメン'},price:'₱480',desc:{en:'Rich pork-bone broth, chashu, soft egg and scallion.',ja:'濃厚豚骨スープ、チャーシュー、半熟卵、ねぎ。'},img:'1569718212165-3a8278d5f624'},
+    {name:{en:'Miso Ramen',ja:'味噌ラーメン'},price:'₱450',desc:{en:'Hearty miso broth with corn, butter and bean sprouts.',ja:'コク深い味噌スープ、コーン、バター、もやし。'},img:'1591814468924-caf88d1232e1'},
+    {name:{en:'Chicken Katsu Curry',ja:'チキンカツカレー'},price:'₱420',desc:{en:'Crispy chicken cutlet over rice with Japanese curry.',ja:'サクサクのチキンカツと日本風カレー、ライス添え。'},img:'1546069901-ba9599a7e63c'},
+    {name:{en:'Gyoza (6 pcs)',ja:'餃子（6個）'},price:'₱220',desc:{en:'Pan-fried pork dumplings with ponzu dip.',ja:'豚肉の焼き餃子、ポン酢添え。'},img:'1496116218417-1a781b1c416c'}
+  ],
+  grill:[
+    {tag:{en:'Chef Special',ja:'シェフのおすすめ'},name:{en:'Wagyu Teppanyaki',ja:'和牛鉄板焼き'},price:'₱1,280',desc:{en:'Grilled premium beef with seasonal vegetables.',ja:'上質な和牛と季節野菜の鉄板焼き。'},img:'1558030006-450675393462'},
+    {name:{en:'Garlic Shrimp',ja:'ガーリックシュリンプ'},price:'₱560',desc:{en:'Sizzling prawns in butter-garlic sauce.',ja:'バターガーリックソースの海老鉄板焼き。'},img:'1625938145312-c7e433c7c5b6'},
+    {name:{en:'Yakitori Set',ja:'焼き鳥盛り合わせ'},price:'₱380',desc:{en:'Five skewers of grilled chicken, tare or salt.',ja:'焼き鳥5本盛り、タレまたは塩。'},img:'1519984388953-d2406bc725e5'},
+    {name:{en:'Grilled Vegetables',ja:'焼き野菜'},price:'₱260',desc:{en:'Assorted island vegetables, lightly charred.',ja:'地元野菜の盛り合わせ、香ばしく焼き上げ。'},img:'1540420773420-3366772f4999'}
+  ],
+  drink:[
+    {name:{en:'Asahi / San Miguel',ja:'アサヒ / サンミゲル'},price:'₱150',desc:{en:'Ice-cold draft and bottled beer.',ja:'よく冷えた生ビール・瓶ビール。'},img:'1608270586620-248524c67de9'},
+    {name:{en:'Sake (Hot / Cold)',ja:'日本酒（熱燗・冷酒）'},price:'₱280',desc:{en:'Premium junmai sake by the carafe.',ja:'純米酒、徳利でご提供。'},img:'1514362545857-3bc16c4c7d1b'},
+    {name:{en:'Matcha Latte',ja:'抹茶ラテ'},price:'₱180',desc:{en:'Stone-ground matcha with fresh milk.',ja:'石臼挽き抹茶とミルクのラテ。'},img:'1515823662972-da6a2e4d3002'},
+    {name:{en:'Fresh Calamansi',ja:'カラマンシージュース'},price:'₱120',desc:{en:'Local citrus, freshly squeezed.',ja:'地元産カラマンシーの絞りたてジュース。'},img:'1621263764928-df1444c5e859'}
+  ]
+};
+
+const grid=document.getElementById('menuGrid');
+function render(cat){
+  grid.innerHTML = MENU[cat].map(d=>`
+    <article class="dish">
+      <div class="dish-img">
+        ${d.tag?`<span class="dish-tag"><span lang="en">${d.tag.en}</span><span lang="ja">${d.tag.ja}</span></span>`:''}
+        <img src="https://images.unsplash.com/photo-${d.img}?w=600" alt="${d.name.en}" loading="lazy">
+      </div>
+      <div class="dish-body">
+        <div class="dish-head">
+          <h3><span lang="en">${d.name.en}</span><span lang="ja">${d.name.ja}</span></h3>
+          <span class="dish-price">${d.price}</span>
+        </div>
+        <p><span lang="en">${d.desc.en}</span><span lang="ja">${d.desc.ja}</span></p>
+      </div>
+    </article>`).join('');
+}
+render('sushi');
+document.getElementById('menuTabs').addEventListener('click',e=>{
+  const b=e.target.closest('.menu-tab'); if(!b)return;
+  document.querySelectorAll('.menu-tab').forEach(t=>t.classList.remove('active'));
+  b.classList.add('active'); render(b.dataset.cat);
+});
+</script>
+</body>
+</html>

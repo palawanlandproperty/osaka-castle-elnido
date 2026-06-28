@@ -129,6 +129,15 @@ section{padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px)}
 .sec-head h2{font-size:clamp(28px,4.4vw,44px);margin-bottom:14px}
 .sec-head p{color:var(--sumi);opacity:.78;font-size:15.5px}
 .divider{width:54px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:3px}
+.fullmenu-wrap{text-align:center;margin-top:26px}
+.btn-fullmenu{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  padding:13px 30px;border-radius:999px;font-weight:700;font-size:14px;
+  letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  font-family:inherit;border:1.5px solid var(--vermilion);
+  color:var(--vermilion);background:none;transition:.2s;
+}
+.btn-fullmenu:hover{background:var(--vermilion);color:#fff;transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(192,57,43,.6)}
 
 /* ---------- about ---------- */
 .about{background:var(--washi-deep)}
@@ -280,6 +289,12 @@ svg{display:block}
     <h2><span lang="en">Signature Dishes</span><span lang="ja">おすすめ料理</span></h2>
     <p><span lang="en">A selection of our most-loved plates. Prices in Philippine Peso.</span><span lang="ja">人気の料理を厳選してご紹介します。価格はフィリピンペソ表示です。</span></p>
     <div class="divider"></div>
+    <div class="fullmenu-wrap">
+      <a href="https://shorturl.at/5vGJu" target="_blank" rel="noopener" class="btn-fullmenu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span lang="en">Full Menu</span><span lang="ja">メニュー全体を見る</span>
+      </a>
+    </div>
   </div>
 
   <div class="menu-tabs" id="menuTabs">

@@ -221,6 +221,8 @@ section{padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px)}
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:var(--washi);padding:56px clamp(20px,6vw,80px) 30px;text-align:center}
 .foot-brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
+.foot-logo{height:140px;width:auto;display:block;background:var(--washi);padding:16px 30px;border-radius:14px}
+@media(max-width:760px){.foot-logo{height:110px;padding:12px 22px}}
 .foot-brand .mon{width:42px;height:42px;border-radius:50%;background:var(--vermilion);display:grid;place-items:center;font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px}
 .foot-brand b{font-family:"Shippori Mincho",serif;font-size:22px}
 .socials{display:flex;gap:16px;justify-content:center;margin:24px 0}
@@ -388,13 +390,8 @@ svg{display:block}
 <!-- ====== FOOTER ====== -->
 <footer>
   <div class="foot-brand">
-    <span class="mon jp">城</span>
-    <b>Osaka Castle</b>
+    <img class="foot-logo" src="logo.png" alt="Osaka Castle El Nido">
   </div>
-  <p style="opacity:.7;font-size:14px">
-    <span lang="en">Japanese Restaurant · El Nido, Palawan</span>
-    <span lang="ja">和食レストラン・パラワン州エルニド</span>
-  </p>
   <div class="socials">
     <a href="https://www.facebook.com/OsakaCastleElNido/" target="_blank" rel="noopener" aria-label="Facebook">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>

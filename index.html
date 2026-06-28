@@ -298,10 +298,12 @@ svg{display:block}
   </div>
 
   <div class="menu-tabs" id="menuTabs">
-    <button class="menu-tab active" data-cat="sushi"><span lang="en">Sushi & Sashimi</span><span lang="ja">寿司・刺身</span></button>
-    <button class="menu-tab" data-cat="hot"><span lang="en">Ramen & Hot</span><span lang="ja">ラーメン・温菜</span></button>
-    <button class="menu-tab" data-cat="grill"><span lang="en">Teppanyaki</span><span lang="ja">鉄板焼き</span></button>
-    <button class="menu-tab" data-cat="drink"><span lang="en">Drinks</span><span lang="ja">ドリンク</span></button>
+    <button class="menu-tab active" data-cat="popular"><span lang="en">Popular</span><span lang="ja">人気</span></button>
+    <button class="menu-tab" data-cat="sushi"><span lang="en">Sushi & Sashimi</span><span lang="ja">寿司・刺身</span></button>
+    <button class="menu-tab" data-cat="ramen"><span lang="en">Ramen & Noodles</span><span lang="ja">ラーメン・麺</span></button>
+    <button class="menu-tab" data-cat="rice"><span lang="en">Rice Bowls</span><span lang="ja">丼もの</span></button>
+    <button class="menu-tab" data-cat="takoyaki"><span lang="en">Takoyaki & Okonomi</span><span lang="ja">たこ焼き・お好み焼き</span></button>
+    <button class="menu-tab" data-cat="drink"><span lang="en">Beers & Sake</span><span lang="ja">ビール・日本酒</span></button>
   </div>
 
   <div class="menu-grid" id="menuGrid"></div>
@@ -416,32 +418,28 @@ langBtn.addEventListener('click',()=>{
   document.documentElement.lang = en?'ja':'en';
 });
 
-// ---- menu data (sample — replace with real items) ----
+// ---- menu data ----
+// カテゴリ: popular / sushi / ramen / rice / takoyaki / drink
+// 各商品: name(en/ja), price, desc(en/ja), tag(任意), そして画像は local:'ファイル名.jpg'
+// 画像はリポジトリ直下に置き、local にファイル名を入れてください。
 const MENU={
+  popular:[
+    {name:{en:'Coming soon',ja:'準備中'},price:'',desc:{en:'Popular items will be added here.',ja:'人気メニューをここに追加します。'},img:'1569718212165-3a8278d5f624'}
+  ],
   sushi:[
-    {tag:{en:'Popular',ja:'人気'},name:{en:'Spicy Salmon Maki',ja:'スパイシーサーモン巻き'},price:'₱—',desc:{en:'Salmon maki topped with crispy onion, spicy mayo, sriracha and spring onion.',ja:'サーモン巻きに、カリカリオニオン、スパイシーマヨ、シラチャー、青ねぎをトッピング。'},local:'spicy-salmon-maki.jpg'},
-    {name:{en:'Castle Sushi Set',ja:'城寿司盛り合わせ'},price:'₱650',desc:{en:'Ten pieces of chef-selected nigiri with miso soup.',ja:'おまかせ握り10貫、味噌汁付き。'},img:'1579871494447-9811cf80d66c'},
-    {name:{en:'Salmon Sashimi',ja:'サーモン刺身'},price:'₱420',desc:{en:'Fresh salmon, thinly sliced, eight pieces.',ja:'新鮮なサーモンの薄造り、8切れ。'},img:'1611143669185-af224c5e3252'},
-    {name:{en:'Tuna & Avocado Roll',ja:'マグロアボカドロール'},price:'₱380',desc:{en:'Maki roll with seared tuna and creamy avocado.',ja:'炙りマグロとアボカドの巻き寿司。'},img:'1583623025817-d180a2221d0a'},
-    {name:{en:'Vegetarian Roll',ja:'野菜巻き'},price:'₱290',desc:{en:'Cucumber, pickled radish and shiso, eight pieces.',ja:'きゅうり、たくあん、大葉の巻き寿司、8個。'},img:'1564489563601-c53cfc451e93'}
+    {name:{en:'Coming soon',ja:'準備中'},price:'',desc:{en:'Sushi & sashimi will be added here.',ja:'寿司・刺身をここに追加します。'},img:'1579871494447-9811cf80d66c'}
   ],
-  hot:[
-    {tag:{en:'Signature',ja:'看板'},name:{en:'Tonkotsu Ramen',ja:'豚骨ラーメン'},price:'₱480',desc:{en:'Rich pork-bone broth, chashu, soft egg and scallion.',ja:'濃厚豚骨スープ、チャーシュー、半熟卵、ねぎ。'},img:'1569718212165-3a8278d5f624'},
-    {name:{en:'Miso Ramen',ja:'味噌ラーメン'},price:'₱450',desc:{en:'Hearty miso broth with corn, butter and bean sprouts.',ja:'コク深い味噌スープ、コーン、バター、もやし。'},img:'1591814468924-caf88d1232e1'},
-    {name:{en:'Chicken Katsu Curry',ja:'チキンカツカレー'},price:'₱420',desc:{en:'Crispy chicken cutlet over rice with Japanese curry.',ja:'サクサクのチキンカツと日本風カレー、ライス添え。'},img:'1546069901-ba9599a7e63c'},
-    {name:{en:'Gyoza (6 pcs)',ja:'餃子（6個）'},price:'₱220',desc:{en:'Pan-fried pork dumplings with ponzu dip.',ja:'豚肉の焼き餃子、ポン酢添え。'},img:'1496116218417-1a781b1c416c'}
+  ramen:[
+    {name:{en:'Coming soon',ja:'準備中'},price:'',desc:{en:'Ramen & noodles will be added here.',ja:'ラーメン・麺をここに追加します。'},img:'1569718212165-3a8278d5f624'}
   ],
-  grill:[
-    {tag:{en:'Chef Special',ja:'シェフのおすすめ'},name:{en:'Wagyu Teppanyaki',ja:'和牛鉄板焼き'},price:'₱1,280',desc:{en:'Grilled premium beef with seasonal vegetables.',ja:'上質な和牛と季節野菜の鉄板焼き。'},img:'1558030006-450675393462'},
-    {name:{en:'Garlic Shrimp',ja:'ガーリックシュリンプ'},price:'₱560',desc:{en:'Sizzling prawns in butter-garlic sauce.',ja:'バターガーリックソースの海老鉄板焼き。'},img:'1625938145312-c7e433c7c5b6'},
-    {name:{en:'Yakitori Set',ja:'焼き鳥盛り合わせ'},price:'₱380',desc:{en:'Five skewers of grilled chicken, tare or salt.',ja:'焼き鳥5本盛り、タレまたは塩。'},img:'1519984388953-d2406bc725e5'},
-    {name:{en:'Grilled Vegetables',ja:'焼き野菜'},price:'₱260',desc:{en:'Assorted island vegetables, lightly charred.',ja:'地元野菜の盛り合わせ、香ばしく焼き上げ。'},img:'1540420773420-3366772f4999'}
+  rice:[
+    {name:{en:'Coming soon',ja:'準備中'},price:'',desc:{en:'Rice bowls will be added here.',ja:'丼ものをここに追加します。'},img:'1546069901-ba9599a7e63c'}
+  ],
+  takoyaki:[
+    {name:{en:'Coming soon',ja:'準備中'},price:'',desc:{en:'Takoyaki & okonomiyaki will be added here.',ja:'たこ焼き・お好み焼きをここに追加します。'},img:'1540420773420-3366772f4999'}
   ],
   drink:[
-    {name:{en:'Asahi / San Miguel',ja:'アサヒ / サンミゲル'},price:'₱150',desc:{en:'Ice-cold draft and bottled beer.',ja:'よく冷えた生ビール・瓶ビール。'},img:'1608270586620-248524c67de9'},
-    {name:{en:'Sake (Hot / Cold)',ja:'日本酒（熱燗・冷酒）'},price:'₱280',desc:{en:'Premium junmai sake by the carafe.',ja:'純米酒、徳利でご提供。'},img:'1514362545857-3bc16c4c7d1b'},
-    {name:{en:'Matcha Latte',ja:'抹茶ラテ'},price:'₱180',desc:{en:'Stone-ground matcha with fresh milk.',ja:'石臼挽き抹茶とミルクのラテ。'},img:'1515823662972-da6a2e4d3002'},
-    {name:{en:'Fresh Calamansi',ja:'カラマンシージュース'},price:'₱120',desc:{en:'Local citrus, freshly squeezed.',ja:'地元産カラマンシーの絞りたてジュース。'},img:'1621263764928-df1444c5e859'}
+    {name:{en:'Coming soon',ja:'準備中'},price:'',desc:{en:'Beers & sake will be added here.',ja:'ビール・日本酒をここに追加します。'},img:'1608270586620-248524c67de9'}
   ]
 };
 
@@ -465,7 +463,7 @@ function render(cat){
     </article>`;
   }).join('');
 }
-render('sushi');
+render('popular');
 document.getElementById('menuTabs').addEventListener('click',e=>{
   const b=e.target.closest('.menu-tab'); if(!b)return;
   document.querySelectorAll('.menu-tab').forEach(t=>t.classList.remove('active'));
